@@ -28,7 +28,7 @@ public:
             delete root;
             return temp;
         }
-        else{
+        else{ 
             TreeNode *succ=getsuccessor(root);
             root->val=succ->val;
             root->right=deleteNode(root->right,succ->val);
