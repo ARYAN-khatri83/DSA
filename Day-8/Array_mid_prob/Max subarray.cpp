@@ -21,7 +21,7 @@ public:
 
 
 
-// OPTIMAL SOLUTION
+// OPTIMAL SOLUTION 
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
