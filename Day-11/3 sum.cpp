@@ -1,5 +1,5 @@
 class Solution {
-public:
+public: 
     vector<vector<int>> threeSum(vector<int>& nums) {
         sort(nums.begin() , nums.end());    //Sorted Array
         if(nums.size() < 3){    //Base case 1
