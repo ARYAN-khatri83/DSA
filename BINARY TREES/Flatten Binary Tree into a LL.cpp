@@ -11,19 +11,17 @@
  */
 class Solution {
 public:
+    TreeNode* prev = nullptr; // Keep track of the previous node in the flattened list
+
     void flatten(TreeNode* root) {
-        TreeNode*curr=root;
-        while(curr!=NULL){
-            if(curr->left){
-                TreeNode* pred = curr->left;
-                while(pred->right){
-                    pred=pred->right;
-                }
-                pred->right=curr->right;
-                curr->right = curr->left;
-                curr->left = NULL;
-            }
-            curr=curr->right;
-        }
+        if (root == nullptr) return; // If the current node is null, return
+
+        flatten(root->right); // Recursively flatten the right subtree
+        flatten(root->left); // Recursively flatten the left subtree
+
+        // Set the current node's left to null and right to the previous node
+        root->left = nullptr;
+        root->right = prev;
+        prev = root; // Update the previous node to the current node
     }
 };
