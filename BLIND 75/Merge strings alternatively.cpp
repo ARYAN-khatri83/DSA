@@ -16,7 +16,7 @@ public:
         {
             ans+=word1[i];
             i++;
-        }
+        } 
         while(j<m)
         {
             ans+=word2[j];
